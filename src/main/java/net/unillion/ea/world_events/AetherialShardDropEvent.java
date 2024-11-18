@@ -70,7 +70,7 @@ public class AetherialShardDropEvent {
     }
 
     public static void scheduleAetherialDrop(int tick, MinecraftServer server) {
-        if (tick % 60 == 0 && server.getOverworld().isNight()) {
+        if (tick % 600 == 0 && server.getOverworld().isNight()) {
             dropFallingStar(server);
         }
     }
