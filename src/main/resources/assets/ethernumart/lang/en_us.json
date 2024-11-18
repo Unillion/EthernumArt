@@ -1,6 +1,8 @@
 {
   "itemGroup.ethernumart.main": "Ethernum Art",
 
+  "sound.ethernumart.shard_fall": "Aethernum Shard Falls",
+
   "item.ethernumart.aetherial_shard": "Aetherial Shard",
   "item.ethernumart.stabilized_aetherial_shard": "Stabilized Aetherial Shard"
 }

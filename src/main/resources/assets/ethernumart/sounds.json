@@ -1,0 +1,8 @@
+{
+  "shard_fall": {
+    "subtitle": "sound.ethernumart.shard_fall",
+    "sounds": [
+      "ethernumart:shard_fall"
+    ]
+  }
+}
