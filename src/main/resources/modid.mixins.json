@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.unillion.ea.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "EthernumArtMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
