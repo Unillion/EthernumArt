@@ -1,0 +1,13 @@
+{
+  "name": "Aetherial Shard",
+  "icon": "ethernumart:aetherial_shard",
+  "category": "ethernumart:sky_anomalies",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "ethernumart:aetherial_shard",
+      "title": "Aetherial Shard",
+      "text": "Touching this shard, you feel a slight burning sensation in your fingertips. It seems as though the shard is repelling you. Is it possible to reverse this process?"
+    }
+  ]
+}

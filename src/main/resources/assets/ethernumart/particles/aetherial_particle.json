@@ -1,7 +1,5 @@
 {
-  "aetherial_particle": {
-    "textures": [
-      "ethernumartmod:particle/texture"
-    ]
-  }
+  "textures": [
+    "ethernumart:aetherial_particle"
+  ]
 }
