@@ -1,16 +1,21 @@
 package net.unillion.ea.particle.custom;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.DefaultParticleType;
+import net.minecraft.world.chunk.light.LightingProvider;
+import net.unillion.ea.contents.shader.ShaderProgram;
 
 public class AetheriumParticle extends SpriteBillboardParticle {
     private final float gravity;
-
     public AetheriumParticle(ClientWorld world, double xCoord, double yCoord, double zCoord,
                              SpriteProvider spriteSet, double xd, double yd, double zd) {
         super(world, xCoord, yCoord, zCoord, xd, yd, zd);
@@ -19,19 +24,23 @@ public class AetheriumParticle extends SpriteBillboardParticle {
         this.x = xd;
         this.y = yd;
         this.z = zd;
-        this.scale *= 1F;
+        this.scale *= 0.1F;
         this.maxAge = 20;
         this.setSpriteForAge(spriteSet);
 
-        this.red = 1f;
-        this.green = 100f;
-        this.blue = 1f;
-        this.gravity = 0.01F;
+        this.red = 1.0F;
+        this.green = 0.8F + random.nextFloat() * 0.2F;
+        this.blue = 0.2F + random.nextFloat() * 0.1F;
+        this.gravity = 0.1F;
     }
 
     @Override
-    public void tick() {
-        super.tick();
+    public void tick() { super.tick();
+
+        // Add spark-like jitter
+        this.velocityX += (this.random.nextFloat() - 0.5) * 0.02;
+        this.velocityZ += (this.random.nextFloat() - 0.5) * 0.02;
+
         this.velocityY -= gravity;
         fadeOut();
     }
@@ -42,6 +51,7 @@ public class AetheriumParticle extends SpriteBillboardParticle {
 
     @Override
     public void buildGeometry(VertexConsumer vertexConsumer, Camera camera, float tickDelta) {
+        vertexConsumer.light(10);
         super.buildGeometry(vertexConsumer, camera, tickDelta);
     }
 
